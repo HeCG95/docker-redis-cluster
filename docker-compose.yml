@@ -1,0 +1,86 @@
+version: "3"
+services:
+
+  redis-7001:
+    image: redis:4.0.11
+    network_mode: "host"
+    ports:
+      - "7001:7001"
+    volumes:
+      - ./localtime:/usr/share/zoneinfo/Asia/Shanghai:ro
+      - ./localtime:/etc/localtime:ro
+      - ./timezone:/etc/timezone:ro
+      - ./config/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./data/redis:/data
+    command:
+      ["redis-server", "/usr/local/etc/redis/redis.conf","--bind","${HOST}","--port","7001","--cluster-config-file node.7001.conf"]
+  
+  redis-7002:
+    image: redis:4.0.11
+    network_mode: "host"
+    ports:
+      - "7002:7002"
+    volumes:
+      - ./localtime:/usr/share/zoneinfo/Asia/Shanghai:ro
+      - ./localtime:/etc/localtime:ro
+      - ./timezone:/etc/timezone:ro
+      - ./config/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./data/redis2:/data
+    command:
+      ["redis-server", "/usr/local/etc/redis/redis.conf","--bind","${HOST}","--port","7002","--cluster-config-file node.7002.conf"]
+  
+  redis-7003:
+    image: redis:4.0.11
+    network_mode: "host"
+    ports:
+      - "7003:7003"
+    volumes:
+      - ./localtime:/usr/share/zoneinfo/Asia/Shanghai:ro
+      - ./localtime:/etc/localtime:ro
+      - ./timezone:/etc/timezone:ro
+      - ./config/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./data/redis3:/data
+    command:
+      ["redis-server", "/usr/local/etc/redis/redis.conf","--bind","${HOST}","--port","7003","--cluster-config-file node.7003.conf"]
+  
+  redis-7004:
+    image: redis:4.0.11
+    network_mode: "host"
+    ports:
+      - "7004:7004"
+    volumes:
+      - ./localtime:/usr/share/zoneinfo/Asia/Shanghai:ro
+      - ./localtime:/etc/localtime:ro
+      - ./timezone:/etc/timezone:ro
+      - ./config/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./data/redis4:/data
+    command:
+      ["redis-server", "/usr/local/etc/redis/redis.conf","--bind","${HOST}","--port","7004","--cluster-config-file node.7004.conf"]
+  
+  redis-7005:
+    image: redis:4.0.11
+    network_mode: "host"
+    ports:
+      - "7005:7005"
+    volumes:
+      - ./localtime:/usr/share/zoneinfo/Asia/Shanghai:ro
+      - ./localtime:/etc/localtime:ro
+      - ./timezone:/etc/timezone:ro
+      - ./config/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./data/redis5:/data
+    command:
+      ["redis-server", "/usr/local/etc/redis/redis.conf","--bind","${HOST}","--port","7005","--cluster-config-file node.7005.conf"]
+  
+  redis-7006:
+    image: redis:4.0.11
+    network_mode: "host"
+    ports:
+      - "7006:7006"
+    volumes:
+      - ./localtime:/usr/share/zoneinfo/Asia/Shanghai:ro
+      - ./localtime:/etc/localtime:ro
+      - ./timezone:/etc/timezone:ro
+      - ./config/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./data/redis6:/data
+    command:
+      ["redis-server", "/usr/local/etc/redis/redis.conf","--bind","${HOST}","--port","7006","--cluster-config-file node.7006.conf"]
