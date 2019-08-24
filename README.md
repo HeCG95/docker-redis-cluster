@@ -5,9 +5,9 @@ Using Docker Compose to create a redis cluster.
 
 ## Prerequisite
 
-Install [Docker][1] and [Docker Compose][2] in your testing environment
++ Install [Docker][1] and [Docker Compose][2] in your testing environment
 
-Modify .env file to set current host address:
++ Modify .env file to set current host address:
 ```
 HOST=192.168.2.113
 ```
